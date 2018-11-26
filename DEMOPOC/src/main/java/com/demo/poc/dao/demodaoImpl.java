@@ -63,4 +63,22 @@ public class demodaoImpl implements demodao {
     String sql = " DROP TABLE " + tbname;
     jdbcTemplate.execute(sql);
   }
+
+  public String listTables(String dbname) throws Exception {
+    String sql = "SELECT table_name FROM information_schema.tables WHERE table_schema ='"+dbname+"';";
+    List<Map<String,Object>> result = jdbcTemplate.queryForList(sql);
+
+    ObjectMapper objectMapper = new ObjectMapper();
+
+    return objectMapper.writeValueAsString(result);
+  }
+
+  public String viewSchema(String tbname) throws Exception {
+    String sql = "DESCRIBE " + tbname;
+    List<Map<String,Object>> result = jdbcTemplate.queryForList(sql);
+
+    ObjectMapper objectMapper = new ObjectMapper();
+
+    return objectMapper.writeValueAsString(result);
+  }
 }

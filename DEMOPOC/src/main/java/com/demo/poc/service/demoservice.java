@@ -31,4 +31,11 @@ public class demoservice {
     demoDao.deleteTable(tbname);
   }
 
+  public String listTables(String dbname) throws Exception {
+    return demoDao.listTables(dbname);
+  }
+
+  public String viewSchema(String tbname) throws Exception {
+    return demoDao.viewSchema(tbname);
+  }
 }
