@@ -64,8 +64,8 @@ public class demodaoImpl implements demodao {
     jdbcTemplate.execute(sql);
   }
 
-  public String listTables(String dbname) throws Exception {
-    String sql = "SELECT table_name FROM information_schema.tables WHERE table_schema ='"+dbname+"';";
+  public String listTables() throws Exception {
+    String sql = "SELECT table_name FROM information_schema.tables WHERE table_schema ='rohan"+"';";
     List<Map<String,Object>> result = jdbcTemplate.queryForList(sql);
 
     ObjectMapper objectMapper = new ObjectMapper();

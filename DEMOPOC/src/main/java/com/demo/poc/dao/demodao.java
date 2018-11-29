@@ -15,7 +15,7 @@ public interface demodao {
 
     void deleteTable(String tbname) throws SQLException;
 
-    String listTables(String dbname) throws Exception;
+    String listTables() throws Exception;
 
     String viewSchema(String tbname) throws Exception;
 }

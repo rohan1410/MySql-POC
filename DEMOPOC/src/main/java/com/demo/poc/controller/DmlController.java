@@ -39,8 +39,8 @@ public class DmlController {
   }
 
   @GetMapping("/listAllTables")
-  public String listTables(@RequestHeader Map<String,String> dbname) throws Exception {
-    return demoService.listTables(dbname.get("dbname"));
+  public String listTables() throws Exception {
+    return demoService.listTables();
   }
 
   @GetMapping("/viewSchema/" + "{tbname}")
